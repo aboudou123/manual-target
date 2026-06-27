@@ -1,6 +1,6 @@
 # manual-target
 
-> Provisioned via **Koffi IDP** — golden path `go`.
+> Provisioned via **Koffi IDP** — golden path `node`.
 
 
 ## Endpoints
@@ -9,11 +9,12 @@
 
 ## Run locally
 ```bash
-go run .            # http://localhost:8080
-go test ./...
+npm install
+npm start          # http://localhost:3000
+npm test
 ```
 
 ## Docker
 ```bash
-docker build -t manual-target . && docker run -p 8080:8080 manual-target
+docker build -t manual-target . && docker run -p 3000:3000 manual-target
 ```
