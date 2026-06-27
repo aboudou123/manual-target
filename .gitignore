@@ -1,4 +1,5 @@
-/app
-*.exe
-bin/
+node_modules/
+*.log
 .env
+dist/
+coverage/
