@@ -1,5 +1,4 @@
-node_modules/
-*.log
+/app
+*.exe
+bin/
 .env
-dist/
-coverage/
