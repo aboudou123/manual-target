@@ -1,7 +1,9 @@
-FROM node:20-alpine
-WORKDIR /app
-COPY package.json ./
-RUN npm install --omit=dev || true
+FROM golang:1.22-alpine AS build
+WORKDIR /src
 COPY . .
-EXPOSE 3000
-CMD ["node", "src/index.js"]
+RUN go build -o /app .
+
+FROM alpine:3.20
+COPY --from=build /app /app
+EXPOSE 8080
+ENTRYPOINT ["/app"]
